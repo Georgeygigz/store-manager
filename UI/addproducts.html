@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtcs</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="products">
+            <div id="icon">
+                <img src="img/img.png" class="img" style="width:60px;height:60px;">
+            </div>
+                <nav>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li class="current"><a href="addproducts.html">Add Products</a></li>
+                        <li><a href="sales.html">Sales Records</a></li>
+                        <li><a href="signup.html">Create User account</a></li>
+                        <li><a href="login.html">Logout</a></li>
+                        
+                </ul>
+            </nav>
+    </div>
+</header>
+<div class="product">
+<div class="product_body">
+    <h3>Category</h3>
+    <ul id="category">
+        <li class="current"><a href="#">Fruits</a></li>
+        <li><a href="#">Beverages</a></li>
+        <li><a href="#">Statonaries</a></li>
+        <li><a href="#">Vegetables</a></li>
+
+    </ul>
+
+</div>
+<div class="product_body1">
+        <div class="form">
+            <form action="" name="addproduct">
+                <input type="text" name="item_name" placeholder="Item Name" required>
+                <input type="text" name="item_price" placeholder="Item Price" required>
+                <input type="text" name="quantity" placeholder="Quantity in store" required>
+                Choose an Image <input type="file" name="fileTOUpload">
+                <button type="submit" class="add">Add Products</button>
+
+            </form>
+        </div>
+</div>
+</div>
+
+<footer>
+        <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
+</footer>
+</body>
+</html>
