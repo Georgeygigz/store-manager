@@ -154,8 +154,17 @@ ul#category li{
 
 
 }
-.choose{
-
+.modify{
+    padding: 5px;
+	float: left;
+	text-align: center;
+	width: 28%;
+    color: rgb(132, 169, 238);	
+}
+.modify button{
+    background: #f88934;
+    border: 1px solid #f88934;
+    border-radius: 4px;
 }
 footer{
     padding: 5px;
@@ -163,6 +172,7 @@ footer{
     color: #ffffff;
     background-color: #f88934;
     text-align: center; 
+
 }
 
 
