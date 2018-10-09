@@ -27,28 +27,30 @@
 <div class="product_body">
     <h3>Category</h3>
     <ul id="category">
-        <li class="current"><a href="#">Fruits</a></li>
-        <li><a href="#">Beverages</a></li>
-        <li><a href="#">Statonaries</a></li>
-        <li><a href="#">Vegetables</a></li>
+        <li class="current"><a href="#">
+                <input type="checkbox" >
+            Fruits
+        </a></li>
+        <li><a href="#"><input type="checkbox" > Beverages</a></li>
+        <li><a href="#"><input type="checkbox" > Statonaries</a></li>
+        <li><a href="#"><input type="checkbox" > Vegetables</a></li>
 
     </ul>
 
 </div>
 <div class="product_body1">
+    <h3> Add more products to the store</h3> 
         <div class="form">
             <form action="" name="addproduct">
                 <input type="text" name="item_name" placeholder="Item Name" required>
                 <input type="text" name="item_price" placeholder="Item Price" required>
                 <input type="text" name="quantity" placeholder="Quantity in store" required>
-                Choose an Image <input type="file" name="fileTOUpload">
+                <input type="file" name="pic" accept="image/*">               
                 <button type="submit" class="add">Add Products</button>
-
             </form>
         </div>
 </div>
 </div>
-
 <footer>
         <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
 </footer>

@@ -79,7 +79,7 @@ header nav{
     width: 70%;
     float: right;
     overflow: hidden;
-   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     align-content: center;
     margin: 5px;
     text-align: center;
@@ -124,6 +124,38 @@ ul#category li{
     margin-bottom: 5px;
     background: #e6e6e6;
     text-align: center;
+}
+/*Add Product*/
+.form form input{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+    border: none;
+    outline: none;
+    background:transparent;
+    width: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(100,100,100,5);
+}
+.form{
+    border: 1px solid #504f4f;
+    border-radius: 4px; 
+    padding: 5px;
+    width: 90%;
+    padding: 10px;
+}
+.form form button{
+    width: 50%;
+    padding: 15px;
+    margin-top: 10px;
+    border: 1px solid #6b6a69;
+    border-radius: 4px; 
+    background: #f88934;
+
+
+}
+.choose{
+
 }
 footer{
     padding: 5px;
