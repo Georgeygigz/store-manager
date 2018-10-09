@@ -30,7 +30,7 @@ body{
      align-content: center;
      box-sizing: border-box;
      border: 1px soli#f88934;
-     border-radius: 5px;
+     border-radius: 10px;
  }
  .form button{
      width: 100%;
@@ -38,7 +38,7 @@ body{
      padding: 15px;
      background-color: #f88934;
      border: 1px soli#f88934;
-     border-radius: 5px;
+     border-radius: 10px;
  }
  .img{
      display: block;
