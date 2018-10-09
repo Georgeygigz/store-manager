@@ -100,7 +100,7 @@ header nav{
    text-align: center;
    width: 25%;
    padding: 10px;
-   height: 250px;
+   height: 260px;
    margin: 5px;
    border: 1px solid #f88934;
    border-radius: 4px;
@@ -124,6 +124,19 @@ ul#category li{
     margin-bottom: 5px;
     background: #e6e6e6;
     text-align: center;
+}
+#single_product form input{
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid #83817f;
+    border-radius: 4px;
+}
+#single_product form button{
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid #83817f;
+    border-radius: 4px;
+    background: #f88934;
 }
 /*Add Product*/
 .form form input{
@@ -151,8 +164,6 @@ ul#category li{
     border: 1px solid #6b6a69;
     border-radius: 4px; 
     background: #f88934;
-
-
 }
 .modify{
     padding: 5px;
@@ -168,7 +179,7 @@ ul#category li{
 }
 footer{
     padding: 5px;
-    margin-top: 680px;
+    margin-top: 690px;
     color: #ffffff;
     background-color: #f88934;
     text-align: center; 
