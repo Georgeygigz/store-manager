@@ -20,13 +20,3 @@ var sales_record = [{"CUSTOMER_NAME": "Maria Kim", "ITEM_NAME": "Bread","QUANTIT
    
 }
 document.write(display());
-
-function accept(){
-alert('Accept order')
-}
-function decline(){
-alert('decline order')
-}
-function complete(){
-    alert('order marked as complete order')
-    }

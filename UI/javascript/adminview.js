@@ -22,13 +22,3 @@ var sales_record = [{"ATTEDANT_NAME": "George Mutti","CUSTOMER_NAME": "Maria Kim
    
 }
 document.write(display());
-
-function accept(){
-alert('Accept order')
-}
-function decline(){
-alert('decline order')
-}
-function complete(){
-    alert('order marked as complete order')
-    }
