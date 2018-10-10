@@ -1,5 +1,5 @@
 function display() {
-var sales_record = [{"CUSTOMER_NAME": "Maria Kim", "ITEM_NAME": "Bread","QUANTITY":"3","TOTAL_PRICE":"150","DATE_SOLD":"12/3/2012" }, {"CUSTOMER_NAME": "Georgey Gigz", "ITEM_NAME": "Melon","QUANTITY":"5","TOTAL_PRICE":"400","DATE_SOLD":"12/4/2018" },{"CUSTOMER_NAME": "James Kim", "ITEM_NAME": "Oranges","QUANTITY":"5","TOTAL_PRICE":"200","DATE_SOLD":"12/3/2015" }];    
+var sales_record = [{"CUSTOMER_NAME": "Maria Kim", "ITEM_NAME": "Bread","QUANTITY":"3","TOTAL_PRICE":"150","DATE_SOLD":"12/3/2012" }, {"CUSTOMER_NAME": "Georgey Gigz", "ITEM_NAME": "Melon","QUANTITY":"5","TOTAL_PRICE":"400","DATE_SOLD":"12/4/2018" },{"CUSTOMER_NAME": "James Kim", "ITEM_NAME": "Oranges","QUANTITY":"5","TOTAL_PRICE":"200","DATE_SOLD":"12/3/2015" },{"CUSTOMER_NAME": "James Kim", "ITEM_NAME": "Oranges","QUANTITY":"5","TOTAL_PRICE":"200","DATE_SOLD":"12/3/2015" },{"CUSTOMER_NAME": "Maria Kim", "ITEM_NAME": "Bread","QUANTITY":"3","TOTAL_PRICE":"150","DATE_SOLD":"12/3/2012" }, {"CUSTOMER_NAME": "Georgey Gigz", "ITEM_NAME": "Melon","QUANTITY":"5","TOTAL_PRICE":"400","DATE_SOLD":"12/4/2018" }];    
     var records_length = sales_record.length;
     var html_text = "";
 
@@ -14,8 +14,7 @@ var sales_record = [{"CUSTOMER_NAME": "Maria Kim", "ITEM_NAME": "Bread","QUANTIT
         "</td><td>"
         +sales_record[i].TOTAL_PRICE+
         "</td><td>"
-        +sales_record[i].DATE_SOLD+
-        "</td><td>";
+        +sales_record[i].DATE_SOLD;
     }
     document.getElementById("tbody").innerHTML = html_text;
    

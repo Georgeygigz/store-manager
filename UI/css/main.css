@@ -177,6 +177,31 @@ ul#category li{
     border: 1px solid #f88934;
     border-radius: 4px;
 }
+
+/*Sales records*/
+ul#product_body1  table,th, td {
+    border: 1px solid black;
+    padding: 10px;
+    border-collapse: collapse;
+    text-align: left;
+}
+table {
+    border-spacing: 5px;
+    margin: 20px;
+    width: 90%;
+    background: #cccccc;
+    padding: 10px;
+}
+table.sales_records tr:nth-child(even) {
+    background-color: #eee;
+}
+table.sales_records tr:nth-child(odd) {
+    background-color: #fff;
+}
+table.sales_records th {
+    color: white;
+    background-color: rgb(184, 179, 179);
+}
 footer{
     padding: 5px;
     margin-top: 730px;
