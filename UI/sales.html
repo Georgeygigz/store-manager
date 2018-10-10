@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtcs</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="products">
+            <div id="icon">
+                <img src="img/img.png" class="img" style="width:60px;height:60px;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="addproducts.html">Add Products</a></li>
+                    <li class="current"><a href="sales.html">Sales Records</a></li>
+                    <li><a href="signup.html">Create User account</a></li>
+                    <li><a href="login.html">Logout</a></li>
+
+                </ul>
+            </nav>
+    </div>
+</header>
+<div class="product">
+<div class="product_body">
+     <h4>This section Tracks your sale records</h4>
+     <form>
+         <label>Filter By</label>
+         <select>
+             <option></option>
+             <option>Customer</option>
+             <option>Date sold</option>
+         </select>
+     </form>
+</div>
+<div class="product_body1">
+    <h3> SALES RECORDS</h3> 
+    <table class="sales_records">
+        <thead>
+        <tr>
+            <th>ATTEDANT NAME</th>
+            <th>CUSTOMER NAME</th>
+            <th>ITEM NAME</th>
+            <th>QUANTITY</th>
+            <th>TOTAL PRICE</th>
+            <th>DATE SOLD</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+        
+    </table>
+</div>
+</div>
+<footer>
+        <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
+</footer>
+<script type="text/javascript" src="javascript/adminview.js"></script>
+</body>
+</html>
