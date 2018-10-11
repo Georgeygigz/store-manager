@@ -1,3 +1,4 @@
+
 header{
     background: #939696;
     color: #ffffff;
@@ -39,13 +40,14 @@ header nav{
 }
 
 body{
-    background:#ffffff;
+    background: rgb(240, 236, 194);
  }
  
  .login{
      width: 660px;
      padding: 5% 0 0;
      margin: auto;
+     
  }
  .form{
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -57,7 +59,7 @@ body{
      border: 1px solid #f88934;
      border-radius: 40px;
      color: #383735;
-     
+     background: palegoldenrod;
  }
  .form p{
      text-align: center;
