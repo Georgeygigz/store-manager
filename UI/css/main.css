@@ -3,7 +3,6 @@
   margin: auto;
   overflow: hidden;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
 .items{
     width : 97%;
@@ -91,7 +90,9 @@ header nav{
     text-align: center;
   
 }
-
+#image{
+    float: right;
+}
 .product_body1 button{
     width: 100%;
 }
@@ -187,7 +188,7 @@ ul#category li{
 /*Sales records*/
 ul#product_body1  table,th, td {
     border: 1px solid black;
-    padding: 10px;
+    padding: 5px;
     border-collapse: collapse;
     text-align: left;
 }
@@ -209,9 +210,10 @@ table.sales_records th {
     background-color: rgb(184, 179, 179);
 }
 
+
 footer{
     padding: 5px;
-    margin-top: 730px;
+    margin-top: 760px;
     color: #ffffff;
     background-color: #f88934;
     text-align: center; 
