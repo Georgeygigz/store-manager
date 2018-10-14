@@ -138,7 +138,7 @@ ul#category li{
     border: 1px solid #83817f;
     border-radius: 4px;
 }
-#single_product form button{
+#single_product form button, .add{
     padding: 5px;
     margin: 3px;
     border: 1px solid #83817f;
