@@ -1,9 +1,12 @@
-function check_role() {
-    if (document.getElementById('role').value == 'Store Attedant') {
-        return window.open('attedantpage.html');
-    } else if (document.getElementById('role').value == 'Admin'){
-        return window.open('products.html');
-    }else{
-        alert.apply('Please Select the role')
-    }
+function login(){
+    return window.location = "login.html"
+
+}
+function admin(){
+    return window.location = "products.html"
+    
+}
+function attedant(){
+    return window.location = "attedantpage.html"
+    
 }

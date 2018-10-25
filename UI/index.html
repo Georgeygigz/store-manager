@@ -2,28 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" type="image/png" href="img/favicon/login.png"/>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon/shopping cart.png"/>
 </head>
 <body>
-    <div class="login">
-        
-        <div class="form">
-            <img src="img/img.png" class="img" style="width:100px;height:100px;">
-                <p>STORE MANAGER HELPS YOU TO MANAGE YOUR STOCK IN A MORE EFFECTIVE WAY</p>
-            <form>
-                <input type="text" placeholder="Email" required id="email">
-                <input type="password" placeholder="Password" required id="password">
-                <select class="role" id="role" name="role" >
-                    <option></option>
-                    <option>Store Attedant</option>
-                    <option>Admin</option>
-                </select>
-                <button type="submit" id="login" onclick="check_role()">Login</button>
-                <p>Forgot password?Click<a href="#">Here</a></p>
-            </form>
-        </div>
+    <div id="index_page">
+        <div class="section"><button onclick="login()">LOGIN PAGE</button></div>
+        <div class="section"><button onclick="attedant()">ATTEDANT PAGE</button></div>
+        <div class="section"><button onclick="admin()">ADMIN PAGE</button></div>
+
     </div>
 <script type="text/javascript" src="javascript/role.js"></script>
 </body>
