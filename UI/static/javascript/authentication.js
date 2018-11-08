@@ -110,7 +110,7 @@ function displayUser(){
 
     userdata='<table  style="margin:5px; padding:5px; width:100%;float:left;"><tr><th>User Name</th><th>Email</th><th>User Role</th><th>Action</th></tr>';
     for (i=0; i<result.length; i++){
-    cartdata+="<tr><td>"+result[i].username+"</td><td>"+result[i].email+"</td><td>"+
+    userdata+="<tr><td>"+result[i].username+"</td><td>"+result[i].email+"</td><td>"+
     result[i].role+"</td><td><button onClick='deleteUser("+i+")'  style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button><button onClick='editUser()'  style='background:green;margin:5px; padding:5px; width:40%;'>Edit</button></td></tr>";
  }
  userdata +=''+'</tr></table>';
