@@ -29,16 +29,17 @@
     <h3>Add New User</h3>
     <div class="form">
         <p>STORE MANAGER HELPS YOU TO MANAGE YOUR STOCK IN A MORE EFFECTIVE WAY</p>
-    <form>
+    <form onsubmit="event.preventDefault();" id='signup'>
         <input type="text" placeholder="Username" required id="username">
         <input type="text" placeholder="Email" required id="email">
         <input type="password" placeholder="Password" required id="password">
         <input type="password" placeholder="Confirm Password" required id="c_password">
-        <select id="select">
+        <select id="role">
             <option value="admin">Admin</option>
-            <option value="user">User</option>
+            <option value="attedant">Attedant</option>
           </select>
-        <button type="submit" id="login" onclick="add_user()">Add User</button>            
+        <div id="message"></div>
+        <button type="submit" id="sign_up" onclick="signup()">Add User</button>            
     </form>
 </div>
 </div>
@@ -51,7 +52,7 @@
 <footer>
         <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
 </footer>
-<script type="text/javascript" src="../static/javascript/user.js"></script>
+<script type="text/javascript" src="../static/javascript/authentication.js"></script>
 
 </body>
 </html>
