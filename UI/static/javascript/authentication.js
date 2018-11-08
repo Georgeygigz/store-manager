@@ -1,4 +1,5 @@
 /**Login function **/
+
 function login() {
     let data = {
         email: document.getElementById("email").value,
@@ -91,3 +92,29 @@ function signup() {
             .catch(error => console.log(error));
     }
 }
+
+/**Display all users**/
+function displayUser(){
+    const users_url="https://storemanagerv2.herokuapp.com/api/v2/auth/register"
+    const token = localStorage.getItem("token");
+    fetch(users_url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        }
+      }).then(function(response){
+          return response.json()
+      }).then(function(data){
+          let result=data.message
+
+    userdata='<table  style="margin:5px; padding:5px; width:100%;float:left;"><tr><th>User Name</th><th>Email</th><th>User Role</th><th>Action</th></tr>';
+    for (i=0; i<result.length; i++){
+    cartdata+="<tr><td>"+result[i].username+"</td><td>"+result[i].email+"</td><td>"+
+    result[i].role+"</td><td><button onClick='deleteUser("+i+")'  style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button><button onClick='editUser()'  style='background:green;margin:5px; padding:5px; width:40%;'>Edit</button></td></tr>";
+ }
+ userdata +=''+'</tr></table>';
+ document.getElementById('view_user').innerHTML=userdata;
+})  .catch(error => console.log(error));
+}
+ document.write(displayUser());
