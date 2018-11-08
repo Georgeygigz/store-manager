@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attedants Sales Records</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon/products.png"/>
+</head>
+<body>
+    <header>
+        <div class="products">
+            <div id="icon">
+                <img src="img/img.png" class="img" style="width:60px;height:60px;">
+            </div>
+            <nav>
+                <ul>
+                    <li ><a href="attedantpage.html">Products</a></li>
+                    <li><a href="addtocart.html">Add To Buyers Cart</a></li>
+                    <li class="current"><a href="atedantsales.html">Sales Records</a></li>
+                    <li><a href="login.html">Logout</a></li>
+
+                </ul>
+            </nav>
+    </div>
+</header>
+<div class="product">
+<div class="product_body">
+     <h4>This section Tracks your sale records</h4>
+     <form>
+         <label>Filter By</label>
+         <select>
+             <option></option>
+             <option>Customer</option>
+             <option>Date sold</option>
+         </select>
+         <select>
+                <option></option>
+            </select>
+     </form>
+    
+     <div>
+         <h4>Total Sales Records</h4>
+         <p><strong>Total sales:</strong> 300</p>
+     </div>
+
+     <div>
+            <p><strong>Total products sold:</strong> 1000</p>
+        </div>
+</div>
+<div class="product_body1">
+    <h3> SALES RECORDS</h3> 
+    <table class="sales_records">
+        <thead>
+        <tr>
+            <th>CUSTOMER NAME</th>
+            <th>ITEM NAME</th>
+            <th>QUANTITY</th>
+            <th>TOTAL PRICE</th>
+            <th>DATE SOLD</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+        
+    </table>
+</div>
+</div>
+<footer>
+        <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
+</footer>
+<script type="text/javascript" src="javascript/salesrecord.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+header{
+    background: #939696;
+    color: #ffffff;
+    padding-top:20px;
+    max-height: 90px;
+    border-bottom: #525150 3px solid;
+    
+}
+.products{
+    width : 80%;
+    margin: auto;
+    overflow: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  }
+  ul{
+	margin: 0;
+	padding: 0;
+}
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;    
+}
+
+header li{
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header nav{
+	float: right;
+    margin-top: 2px;
+}
+.current a{
+	color: #e8491d;
+	font-weight:bold;
+	
+}
+
+body{
+    background: rgb(240, 236, 194);
+ }
+ 
+ .login{
+     width: 660px;
+     padding: 5% 0 0;
+     margin: auto;
+     
+ }
+ .form{
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     position: relative;
+     z-index: 1;
+     max-width: 600px;
+     margin: 0 auto 100px;
+     padding: 45px;
+     border: 1px solid #f88934;
+     border-radius: 40px;
+     color: #383735;
+     background: palegoldenrod;
+ }
+ .form p{
+     text-align: center;
+ }
+ .form input{
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     width: 100%;
+     padding: 15px;
+     margin: 5px;
+     align-content: center;
+     box-sizing: border-box;
+     border: 1px soli#f88934;
+     border-radius: 10px;
+ }
+ .form button{
+     width: 100%;
+     margin: 5px;
+     padding: 15px;
+     background-color: #f88934;
+     border: 1px soli#f88934;
+     border-radius: 10px;
+     color: #ffffff;
+ }
+ .img{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+ }
+#select{
+    padding: 15px;
+    width: 100%;
+    border: 1px soli#f88934;
+    border-radius: 10px;
+    margin: 5px;
+}
+.role{
+    width: 100%;
+    padding: 15px;
+    margin: 5px;
+    border: 1px soli#f88934;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+footer{
+    padding: 5px;
+    margin-top: 40px;
+    color: #ffffff;
+    background-color: #f88934;
+    text-align: center; 
+}
