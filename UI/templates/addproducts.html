@@ -26,34 +26,35 @@
 </header>
 <div class="product">
 <div class="product_body">
-    <h3>Category</h3>
-    <ul id="category">
-        <li class="current"><a href="#"><input type="checkbox" >Fruits</a></li>
-        <li><a href="#"><input type="checkbox" > Beverages</a></li>
-        <li><a href="#"><input type="checkbox" > Statonaries</a></li>
-        <li><a href="#"><input type="checkbox" > Vegetables</a></li>
-    </ul>
+    <h3>Add New Product</h3>
+    <div class="form">
+        <form onsubmit="event.preventDefault();" id="addproduct">
+            <input type="text" id="item_name" placeholder="Item Name" required>
+            <input type="text" id="item_price" placeholder="Item Price" required>
+            <input type="text" id="quantity" placeholder="Number of items in the store" required><br>
+            <label>Choose category</label>       
+            <select id="category">
+                <option ></option>
+                <option value="1">Fruits</option>
+                <option value="2">Beverages</option>
+                <option value="3">Toiletaries</option>
+                <option value="4">Vegetable</option>
+              </select>    
+              <div id="message"></div>        
+            <button type="submit"  onclick="addProduct()">Add Products</button>
+        </form>
+    </div>
+
  <a href="category.html"><h3>ADD ITEM CATEGORY</h3></a>
 </div>
+<div id="total">
+       <strong>Total Products:</strong> 
+        <div class="total" id="ttl"></div> 
+</div>
 <div class="product_body1">
-    <h3> Add more products to the store</h3> 
-        <div class="form">
-            <form action="" name="addproduct">
-                <input type="text" name="item_name" placeholder="Item Name" required>
-                <input type="text" name="item_price" placeholder="Item Price" required>
-                <input type="text" name="quantity" placeholder="Number of items in the store" required>
-                <input type="file" name="pic" accept="image/*"><br> 
-                <label>Choose category</label>       
-                <select id="select">
-                    <option value="admin"></option>
-                    <option value="admin">Fruits</option>
-                    <option value="user">Beverages</option>
-                    <option value="user">Toiletaries</option>
-                    <option value="user">Vegetable</option>
-                  </select>            
-                <button type="submit" class="add" onclick="add_product()">Add Products</button>
-            </form>
-        </div>
+    <h3> View available products </h3> 
+    <div id="view_products"></div>
+        
 </div>
 </div>
 <footer>

@@ -116,6 +116,13 @@ header nav{
     text-align: center;
   
 }
+#total{
+    float: left;
+    
+}
+.total{
+    display: inline;
+}
 #image{
     float: right;
 }
