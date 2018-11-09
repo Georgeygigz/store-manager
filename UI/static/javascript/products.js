@@ -54,7 +54,7 @@ function getProducts(){
 
     }else{
 
-    products=`<table  style="margin:5px; padding:5px; width:100%;float:left;">
+    products=`<table id="tbl_products" style="margin:5px; padding:5px; width:100%;float:left;">
     <tr>
     <th>Product Name</th>
     <th>Price</th>
@@ -65,9 +65,9 @@ function getProducts(){
         products+="<tr><td>"+result[i].product_name+"</td><td>"+
         result[i].price+"</td><td>"+
         result[i].stock_amount+"</td><td>"+
-        result[i].category_id+"</td><td><button onClick='deleteUser("+i+")'"+
+        result[i].category_id+"</td><td><button onClick='deleteProduct("+result[i].product_id+")'"+
         "style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button>"+
-        "<button onClick='editUser()'  style='background:green;margin:5px; padding:5px;"+
+        "<button onClick='editProduct()'  style='background:green;margin:5px; padding:5px;"+
         " width:40%;'>Edit</button></td></tr>";
  }
  products +=''+'</tr></table>';
@@ -143,3 +143,35 @@ function productCategories(){
 
 }
 document.write(productCategories());
+
+/**Delete product**/
+function deleteProduct(product_id){
+    var confirm_delete = confirm("Do you want to delete this product");
+    if (confirm_delete==true){
+    var product_url = `http://127.0.0.1:5000/api/v2/products/${product_id}`;
+    var token = localStorage.getItem("token");
+    fetch(product_url,{
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    })
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      let result = data.message
+      if (result === "Deleted Successfuly"){
+        document.getElementById("message").innerHTML = result;
+        document.getElementById("message").style.color = "green";
+        setTimeout(() => {window.location.href = '../templates/addproducts.html';},3000);
+      }
+      else{
+        document.getElementById("message").innerHTML = result;
+        document.getElementById("message").style.color = "red";
+      }
+    })
+    .catch(error => console.log(error));
+    }else{}
+}
