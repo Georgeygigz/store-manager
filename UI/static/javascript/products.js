@@ -67,7 +67,7 @@ function getProducts(){
         result[i].stock_amount+"</td><td>"+
         result[i].category_id+"</td><td><button onClick='deleteProduct("+result[i].product_id+")'"+
         "style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button>"+
-        "<button onClick='editProduct()'  style='background:green;margin:5px; padding:5px;"+
+        "<button onClick='editProduct("+result[i].product_id+")'  style='background:green;margin:5px; padding:5px;"+
         " width:40%;'>Edit</button></td></tr>";
  }
  products +=''+'</tr></table>';
