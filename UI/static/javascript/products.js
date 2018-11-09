@@ -50,7 +50,6 @@ function getProducts(){
           return response.json()
       }).then(function(data){
           let result=data.message
-          console.log(result)
     if (result==="No Available products"){
 
     }else{
@@ -77,6 +76,7 @@ function getProducts(){
 }
  document.write(getProducts());
 
+/**Display all available products**/
 function allProducts(){
     const product_url="https://storemanagerv2.herokuapp.com/api/v2/products"
     const token = localStorage.getItem("token");
@@ -90,7 +90,6 @@ function allProducts(){
           return response.json()
       }).then(function(data){
           let result=data.message
-          console.log(result)
           if (result==="No Available products"){
 
         }else{
