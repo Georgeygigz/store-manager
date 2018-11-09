@@ -28,9 +28,10 @@
 <div class="product_body">
     <h3>Add Category</h3>
     <div class="form">
-        <form action="" name="addproduct">
-            <input type="text" name="item_name" placeholder="Category name" required>      
-            <button type="submit" class="add" onclick="add_category()">Add Category</button>
+        <form onsubmit="event.preventDefault();" id='product_category'>
+            <input type="text" id="category" placeholder="Category name" required>  
+            <div id="message"></div>    
+            <button type="submit" class="add" onclick="addCategory()">Add Category</button>
         </form>
     </div>
 </div>
@@ -43,6 +44,6 @@
 <footer>
         <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
 </footer>
-<script type="text/javascript" src="../static/javascript/products.js"></script>
+<script type="text/javascript" src="../static/javascript/category.js"></script>
 </body>
 </html>
