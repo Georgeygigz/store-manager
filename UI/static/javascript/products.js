@@ -2,14 +2,14 @@
 /** Add new product function**/
 function addProduct() {
     const token = localStorage.getItem("token");
-    const products_url = "https://storemanagerv2.herokuapp.com/api/v2/products";
+    const products_url = "http://127.0.0.1:5000/api/v2/products";
+    var select_box=document.getElementById("category");
     let data = {
         product_name: (document.getElementById("item_name").value).toLowerCase(),
-        category_id: parseInt(document.getElementById("category").value),
+        category_id:  select_box.selectedIndex,
         stock_amount: parseInt(document.getElementById("quantity").value),
         price:parseInt(document.getElementById("item_price").value)
     }
-
  /**Save new product details**/  
         fetch( products_url, {
             method: "POST",
@@ -38,7 +38,7 @@ function addProduct() {
 
 /**Get all available products**/
 function getProducts(){
-    const product_url="https://storemanagerv2.herokuapp.com/api/v2/products"
+    const product_url="http://127.0.0.1:5000/api/v2/products"
     const token = localStorage.getItem("token");
     fetch(product_url, {
         method: "GET",
@@ -65,7 +65,10 @@ function getProducts(){
         products+="<tr><td>"+result[i].product_name+"</td><td>"+
         result[i].price+"</td><td>"+
         result[i].stock_amount+"</td><td>"+
-        result[i].category_id+"</td><td><button onClick='deleteUser("+i+")'  style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button><button onClick='editUser()'  style='background:green;margin:5px; padding:5px; width:40%;'>Edit</button></td></tr>";
+        result[i].category_id+"</td><td><button onClick='deleteUser("+i+")'"+
+        "style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button>"+
+        "<button onClick='editUser()'  style='background:green;margin:5px; padding:5px;"+
+        " width:40%;'>Edit</button></td></tr>";
  }
  products +=''+'</tr></table>';
  document.getElementById('view_products').innerHTML=products;
@@ -78,7 +81,7 @@ function getProducts(){
 
 /**Display all available products**/
 function allProducts(){
-    const product_url="https://storemanagerv2.herokuapp.com/api/v2/products"
+    const product_url="http://127.0.0.1:5000/api/v2/products"
     const token = localStorage.getItem("token");
     fetch(product_url, {
         method: "GET",
@@ -111,3 +114,32 @@ function allProducts(){
 })  .catch(error => console.log(error));
 }
 document.write(allProducts());
+
+/**Populate categories to select box**/
+function productCategories(){
+    const product_url="http://127.0.0.1:5000/api/v2/category"
+    const token = localStorage.getItem("token");
+    fetch(product_url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        }
+      }).then(function(response){
+          return response.json()
+      }).then(function(data){
+          let result=data.message
+    if (result==="No Available products categories"){
+
+    }else{
+    var select_box=document.getElementById('category');
+    for (i=0; i<result.length; i++){ 
+        var option = document.createElement('option');
+        option.text = option.value = result[i].category_name;
+        select_box.add(option, i);
+     } 
+}
+})  .catch(error => console.log(error));
+
+}
+document.write(productCategories());
