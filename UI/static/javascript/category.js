@@ -1,4 +1,4 @@
-/** Add new product function**/
+/** Add new product category function**/
 function addCategory() {
     const token = localStorage.getItem("token");
     const products_url = "http://127.0.0.1:5000/api/v2/category";
@@ -6,7 +6,7 @@ function addCategory() {
         category_name: (document.getElementById("category").value).toLowerCase(),
     }
 
- /**Save new product details**/  
+ /**Save new product category details**/  
         fetch( products_url, {
             method: "POST",
             body: JSON.stringify(data),
@@ -32,8 +32,8 @@ function addCategory() {
             .catch(error => console.log(error));
 }
 
-/**Get all available products**/
-function getProducts(){
+/**Get all available products categories**/
+function getProductsCategories(){
     const product_url="http://127.0.0.1:5000/api/v2/category"
     const token = localStorage.getItem("token");
     fetch(product_url, {
@@ -56,7 +56,11 @@ function getProducts(){
     <th>Action</th></tr>`;
     for (i=0; i<result.length; i++){  
         products+="<tr><td>"+result[i].category_id+"</td><td>"+
-        result[i].category_name+"</td><td><button onClick='deleteUser("+i+")'  style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button><button onClick='editUser()'  style='background:green;margin:5px; padding:5px; width:40%;'>Edit</button></td></tr>";
+        result[i].category_name+"</td>"+
+        "<td><button onClick='deleteUser("+i+")'  style='background:#FF6B33;margin:5px;"+
+        " padding:5px; width:40%;'>Delete</button>"+
+        "<button onClick='editUser()'  style='background:green;margin:5px; padding:5px;"+
+        " width:40%;'>Edit</button></td></tr>";
      }
  products +=''+'</tr></table>';
  document.getElementById('item_category').innerHTML=products;
@@ -64,4 +68,4 @@ function getProducts(){
 })  .catch(error => console.log(error));
 
 }
-document.write(getProducts());
+document.write(getProductsCategories());
