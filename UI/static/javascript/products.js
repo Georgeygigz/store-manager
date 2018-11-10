@@ -187,6 +187,12 @@ function updateProduct(product_id){
         stock_amount: parseInt(document.getElementById("quantity").value),
         price:parseInt(document.getElementById("item_price").value)
     }
+    if ((data.product_name==="") || (data.category_id==="") || (data.stock_amount==="") || (data.price==="")){
+        document.getElementById("message").innerHTML = "All fields are required";
+        document.getElementById("message").style.color="red";
+        setTimeout(() => {document.getElementById("message").innerHTML= "";},3000);
+      
+    }else{
     fetch(product_url,{
       method: "PUT",
       body: JSON.stringify(data),
@@ -211,5 +217,5 @@ function updateProduct(product_id){
       }
     })
     .catch(error => console.log(error));
-    
+}  
 }
