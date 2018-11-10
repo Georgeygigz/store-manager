@@ -59,7 +59,7 @@ function getProductsCategories(){
         result[i].category_name+"</td>"+
         "<td><button onClick='deleteProductCategory("+result[i].category_id+")'  style='background:#FF6B33;margin:5px;"+
         " padding:5px; width:40%;'>Delete</button>"+
-        "<button onClick='editUser()'  style='background:green;margin:5px; padding:5px;"+
+        "<button onClick='updateProductCategory("+result[i].category_id+")'  style='background:green;margin:5px; padding:5px;"+
         " width:40%;'>Edit</button></td></tr>";
      }
  products +=''+'</tr></table>';
@@ -101,4 +101,38 @@ function deleteProductCategory(category_id){
     })
     .catch(error => console.log(error));
     }else{}
+}
+
+/**Update product category**/
+function updateProductCategory(category_id){
+    var product_url = `http://127.0.0.1:5000/api/v2/category/${category_id}`;
+    var token = localStorage.getItem("token");
+    let data = {
+        category_name: (document.getElementById("category").value).toLowerCase(),
+    }
+    fetch(product_url,{
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    })
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      let result = data.message
+      if (result === "Updated Successfuly"){
+        document.getElementById("message").innerHTML = result;
+        document.getElementById("message").style.color = "green";
+        setTimeout(() => {window.location.href = '../templates/category.html';},3000);
+      }
+      else{
+        document.getElementById("message").innerHTML = result;
+        document.getElementById("message").style.color = "red";
+      }
+    })
+    .catch(error => console.log(error));
+    
 }
