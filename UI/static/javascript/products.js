@@ -67,7 +67,7 @@ function getProducts(){
         result[i].stock_amount+"</td><td>"+
         result[i].category_id+"</td><td><button onClick='deleteProduct("+result[i].product_id+")'"+
         "style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button>"+
-        "<button onClick='editProduct()'  style='background:green;margin:5px; padding:5px;"+
+        "<button onClick='updateProduct("+result[i].product_id+")'  style='background:green;margin:5px; padding:5px;"+
         " width:40%;'>Edit</button></td></tr>";
  }
  products +=''+'</tr></table>';
@@ -174,4 +174,42 @@ function deleteProduct(product_id){
     })
     .catch(error => console.log(error));
     }else{}
+}
+
+/**Update product**/
+function updateProduct(product_id){
+    var product_url = `http://127.0.0.1:5000/api/v2/products/${product_id}`;
+    var token = localStorage.getItem("token");
+    var select_box=document.getElementById("category");
+    let data = {
+        product_name: (document.getElementById("item_name").value).toLowerCase(),
+        category_id:  select_box.selectedIndex,
+        stock_amount: parseInt(document.getElementById("quantity").value),
+        price:parseInt(document.getElementById("item_price").value)
+    }
+    fetch(product_url,{
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    })
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      let result = data.message
+      if (result === "Updated Successfuly"){
+        document.getElementById("message").innerHTML = result;
+        document.getElementById("message").style.color = "green";
+        setTimeout(() => {window.location.href = '../templates/addproducts.html';},3000);
+      }
+      else{
+        document.getElementById("message").innerHTML = result;
+        document.getElementById("message").style.color = "red";
+      }
+    })
+    .catch(error => console.log(error));
+    
 }
