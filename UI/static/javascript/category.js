@@ -110,6 +110,12 @@ function updateProductCategory(category_id){
     let data = {
         category_name: (document.getElementById("category").value).toLowerCase(),
     }
+    if (data.category_name===""){
+        document.getElementById("message").innerHTML = "All fields are required";
+        document.getElementById("category").style.borderColor= "#FF6B33";
+        setTimeout(() => {document.getElementById("category").style.borderColor= "#44403E";},3000);
+        setTimeout(() => {document.getElementById("message").innerHTML= "";},3000);
+    }else{
     fetch(product_url,{
       method: "PUT",
       body: JSON.stringify(data),
@@ -134,5 +140,5 @@ function updateProductCategory(category_id){
       }
     })
     .catch(error => console.log(error));
-    
+}
 }
