@@ -1,5 +1,4 @@
 /**Login function **/
-
 function login() {
     let data = {
         email: document.getElementById("email").value,
@@ -29,7 +28,7 @@ function login() {
             if (role === "admin") {
                 setTimeout(() => { window.location.href = '../templates/products.html'; }, 1500);
             } else {
-                setTimeout(() => { window.location.href = '../templates/attedantpage.html'; }, 1500);
+                setTimeout(() => { window.location.href = '../templates/addtocart.html'; }, 1500);
             }
         }
         else {
@@ -117,7 +116,7 @@ function displayUser(){
     userdata+="<tr><td>"+result[i].username+"</td><td>"+result[i].email+"</td><td>"+
     result[i].role+"</td><td><button onClick='deleteUserAccount("+result[i].user_id+")' "+
     "style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button>"+
-    "<button onClick='updateUserRole("+result[i].user_id+")'  style='background:green;margin:5px; padding:5px; "+
+    "<button onClick='updateUserRole("+result[i].user_id+")'style='background:green;margin:5px; padding:5px;"+
     "width:40%;'>Edit</button></td></tr>";
  }
  userdata +=''+'</tr></table>';
