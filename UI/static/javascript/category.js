@@ -51,7 +51,7 @@ function getProductsCategories(){
     }else{
     products=`<table  style="margin:5px; padding:5px; width:100%;float:left;">
     <tr>
-    <th>Category Id Name</th>
+    <th>Category Id</th>
     <th>Category Name</th>
     <th>Action</th></tr>`;
     for (i=0; i<result.length; i++){  
