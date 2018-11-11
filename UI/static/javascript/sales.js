@@ -1,4 +1,4 @@
-const product_url="http://127.0.0.1:5000/api/v2/products";
+const product_url="https://storemanagerv2.herokuapp.com/api/v2/products";
 const token = localStorage.getItem("token");
 const user = localStorage.getItem("user");
 document.getElementById("current_user").innerHTML=user;
@@ -29,7 +29,7 @@ function newSaleRecord(id){
 
 /**Get All products**/
 function allProducts(){
-    const product_url="http://127.0.0.1:5000/api/v2/products"
+    const product_url="https://storemanagerv2.herokuapp.com/api/v2/products"
     const token = localStorage.getItem("token");
     document.getElementById("current_user").innerHTML=user;
     fetch(product_url, {
@@ -68,7 +68,7 @@ document.write(allProducts());
 
 /**Display sales records for specific user**/
 function displaySales(username){
-    const sales_url=`http://127.0.0.1:5000/api/v2/sales/${username}`
+    const sales_url=`https://storemanagerv2.herokuapp.com/api/v2/sales/${username}`
     const token = localStorage.getItem("token");
     fetch(sales_url, {
         method: "GET",

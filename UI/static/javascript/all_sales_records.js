@@ -1,7 +1,7 @@
 
 /**Display all sales records**/
 function displaySales(){
-    const cart_url=`http://127.0.0.1:5000/api/v2/sales`
+    const cart_url=`https://storemanagerv2.herokuapp.com/api/v2/sales`
     const token = localStorage.getItem("token");
     fetch(cart_url, {
         method: "GET",

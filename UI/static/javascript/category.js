@@ -1,7 +1,7 @@
 /** Add new product category function**/
 function addCategory() {
     const token = localStorage.getItem("token");
-    const products_url = "http://127.0.0.1:5000/api/v2/category";
+    const products_url = "https://storemanagerv2.herokuapp.com/api/v2/category";
     let data = {
         category_name: (document.getElementById("category").value).toLowerCase(),
     }
@@ -34,7 +34,7 @@ function addCategory() {
 
 /**Get all available products categories**/
 function getProductsCategories(){
-    const product_url="http://127.0.0.1:5000/api/v2/category"
+    const product_url="https://storemanagerv2.herokuapp.com/api/v2/category"
     const token = localStorage.getItem("token");
     fetch(product_url, {
         method: "GET",
@@ -75,7 +75,7 @@ document.write(getProductsCategories());
 function deleteProductCategory(category_id){
     var confirm_delete = confirm("Do you want to delete this product");
     if (confirm_delete==true){
-    var product_url = `http://127.0.0.1:5000/api/v2/category/${category_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/category/${category_id}`;
     var token = localStorage.getItem("token");
     fetch(product_url,{
       method: "DELETE",
@@ -105,7 +105,7 @@ function deleteProductCategory(category_id){
 
 /**Update product category**/
 function updateProductCategory(category_id){
-    var product_url = `http://127.0.0.1:5000/api/v2/category/${category_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/category/${category_id}`;
     var token = localStorage.getItem("token");
     let data = {
         category_name: (document.getElementById("category").value).toLowerCase(),

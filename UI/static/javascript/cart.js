@@ -6,7 +6,7 @@ document.getElementById("product_name").value=product_name;
 /**Add to cart**/
 function addTocart() {
     const token = localStorage.getItem("token");
-    const sale_url = "http://127.0.0.1:5000/api/v2/sales";
+    const sale_url = "https://storemanagerv2.herokuapp.com/api/v2/sales";
     var select_box=document.getElementById("category");
     let data = {
         product_name: document.getElementById("product_name").value,
@@ -40,7 +40,7 @@ function addTocart() {
 
 /**Display all items in cart**/
 function displayCart(){
-    const cart_url="http://127.0.0.1:5000/api/v2/sales"
+    const cart_url="https://storemanagerv2.herokuapp.com/api/v2/sales"
     const token = localStorage.getItem("token");
     fetch(cart_url, {
         method: "GET",
@@ -79,7 +79,7 @@ document.write(displayCart());
 function deleteSale(sale_id){
     var confirm_delete = confirm("Do you want to remove item from cart");
     if (confirm_delete==true){
-    var product_url = `http://127.0.0.1:5000/api/v2/sales/${sale_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/sales/${sale_id}`;
     var token = localStorage.getItem("token");
     fetch(product_url,{
       method: "DELETE",
