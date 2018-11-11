@@ -1,11 +1,10 @@
 /**Login function **/
-
 function login() {
     let data = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
     };
-    const login_url = "http://127.0.0.1:5000/api/v2/auth/login";
+    const login_url = "https://storemanagerv2.herokuapp.com/api/v2/auth/login";
 
 /**Post login credentials**/
     fetch(login_url, {
@@ -29,7 +28,7 @@ function login() {
             if (role === "admin") {
                 setTimeout(() => { window.location.href = '../templates/products.html'; }, 1500);
             } else {
-                setTimeout(() => { window.location.href = '../templates/attedantpage.html'; }, 1500);
+                setTimeout(() => { window.location.href = '../templates/addtocart.html'; }, 1500);
             }
         }
         else {
@@ -45,7 +44,7 @@ function login() {
 /** Signup function**/
 function signup() {
     const token = localStorage.getItem("token");
-    const signup_url = "http://127.0.0.1:5000/api/v2/auth/register";
+    const signup_url = "https://storemanagerv2.herokuapp.com/api/v2/auth/register";
     let data = {
         username: document.getElementById("username").value,
         email: document.getElementById("email").value,
@@ -95,7 +94,7 @@ function signup() {
 
 /**Display all users**/
 function displayUser(){
-    const users_url="http://127.0.0.1:5000/api/v2/auth/register"
+    const users_url="https://storemanagerv2.herokuapp.com/api/v2/auth/register"
     const token = localStorage.getItem("token");
     fetch(users_url, {
         method: "GET",
@@ -117,7 +116,7 @@ function displayUser(){
     userdata+="<tr><td>"+result[i].username+"</td><td>"+result[i].email+"</td><td>"+
     result[i].role+"</td><td><button onClick='deleteUserAccount("+result[i].user_id+")' "+
     "style='background:#FF6B33;margin:5px; padding:5px; width:40%;'>Delete</button>"+
-    "<button onClick='updateUserRole("+result[i].user_id+")'  style='background:green;margin:5px; padding:5px; "+
+    "<button onClick='updateUserRole("+result[i].user_id+")'style='background:green;margin:5px; padding:5px;"+
     "width:40%;'>Edit</button></td></tr>";
  }
  userdata +=''+'</tr></table>';
@@ -132,7 +131,7 @@ function displayUser(){
 function deleteUserAccount(user_id){
     var confirm_delete = confirm("Do you want to delete user");
     if (confirm_delete==true){
-    var product_url = `http://127.0.0.1:5000/api/v2/auth/user/${user_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/auth/user/${user_id}`;
     var token = localStorage.getItem("token");
     fetch(product_url,{
       method: "DELETE",
@@ -165,7 +164,7 @@ function deleteUserAccount(user_id){
 function updateUserRole(user_id){
     var confirm_delete = confirm("Do update user role");
     if (confirm_delete==true){
-    var product_url = `http://127.0.0.1:5000/api/v2/auth/user/${user_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/auth/user/${user_id}`;
     var token = localStorage.getItem("token");
     var select_box=document.getElementById("category");
     let data = {

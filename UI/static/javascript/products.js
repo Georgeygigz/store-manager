@@ -2,13 +2,14 @@
 /** Add new product function**/
 function addProduct() {
     const token = localStorage.getItem("token");
-    const products_url = "http://127.0.0.1:5000/api/v2/products";
-    var select_box=document.getElementById("category");
+    const products_url = "https://storemanagerv2.herokuapp.com/api/v2/products";
+    var select_box= document.getElementById("category");
     let data = {
         product_name: (document.getElementById("item_name").value).toLowerCase(),
-        category_id:  select_box.selectedIndex,
+        category_id:  parseInt( select_box.selectedIndex)+1,
         stock_amount: parseInt(document.getElementById("quantity").value),
-        price:parseInt(document.getElementById("item_price").value)
+        price:parseInt(document.getElementById("item_price").value),
+        image:document.getElementById("product_image").value.replace(/^.*[\\\/]/, '')
     }
  /**Save new product details**/  
         fetch( products_url, {
@@ -38,7 +39,7 @@ function addProduct() {
 
 /**Get all available products**/
 function getProducts(){
-    const product_url="http://127.0.0.1:5000/api/v2/products"
+    const product_url="https://storemanagerv2.herokuapp.com/api/v2/products"
     const token = localStorage.getItem("token");
     fetch(product_url, {
         method: "GET",
@@ -81,7 +82,7 @@ function getProducts(){
 
 /**Display all available products**/
 function allProducts(){
-    const product_url="http://127.0.0.1:5000/api/v2/products"
+    const product_url="https://storemanagerv2.herokuapp.com/api/v2/products"
     const token = localStorage.getItem("token");
     fetch(product_url, {
         method: "GET",
@@ -101,7 +102,7 @@ function allProducts(){
      for (i=0; i<result.length; i++){
          product +=`
          <li>
-         <img src="../static/img/img.png" style="width:100px; height:100px">
+         <img src="../static/img/${result[i].image}" style="width:100px; height:100px">
          <h3>${result[i].product_name}</h3>
          <p><b>Price:</b> ${result[i].price}</p>
          <p><b>Stock Amount:</b>${result[i].stock_amount}</p>
@@ -117,7 +118,7 @@ document.write(allProducts());
 
 /**Populate categories to select box**/
 function productCategories(){
-    const product_url="http://127.0.0.1:5000/api/v2/category"
+    const product_url="https://storemanagerv2.herokuapp.com/api/v2/category"
     const token = localStorage.getItem("token");
     fetch(product_url, {
         method: "GET",
@@ -148,7 +149,7 @@ document.write(productCategories());
 function deleteProduct(product_id){
     var confirm_delete = confirm("Do you want to delete this product");
     if (confirm_delete==true){
-    var product_url = `http://127.0.0.1:5000/api/v2/products/${product_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/products/${product_id}`;
     var token = localStorage.getItem("token");
     fetch(product_url,{
       method: "DELETE",
@@ -178,7 +179,7 @@ function deleteProduct(product_id){
 
 /**Update product**/
 function updateProduct(product_id){
-    var product_url = `http://127.0.0.1:5000/api/v2/products/${product_id}`;
+    var product_url = `https://storemanagerv2.herokuapp.com/api/v2/products/${product_id}`;
     var token = localStorage.getItem("token");
     var select_box=document.getElementById("category");
     let data = {

@@ -14,9 +14,6 @@
             </div>
         <nav>
                 <ul>
-                    <li>
-                        <a href="attedantpage.html">Products</a>
-                    </li>
                     <li class="current">
                         <a href="addtocart.html">Add To Buyers Cart</a>
                     </li>
@@ -32,14 +29,31 @@
     </div>
 </header>
 <div class="product">
-<div class="view_cart">
-    <h3> CART </h3> 
-    <div id="view_cart"></div>
-</div>
-</div>
+    <div class="product_body">
+        <h3>Add To Cart</h3>
+        <div onsubmit="event.preventDefault();"  class="form">
+        <form  id='sales_record'>
+            <input type="text"  required  readonly id="product_name">
+            <input type="text" placeholder="Customer Name" required id="customer_name">
+            <input type="text" placeholder="Quantity" required id="quantity">
+            <div id="message"></div>
+            <button type="submit" id="sales" onclick="addTocart()">Add To cart</button>            
+        </form>
+    </div>
+    </div>
+    <div id="total">
+        <strong>Current user:</strong> 
+         <div class="total" id="current_user"></div> 
+ </div>
+    <div class="product_body1">
+        <h3> Cart details</h3> 
+        <div id="view_cart"></div>
+            
+    </div>
+    </div>
 <footer>
         <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
 </footer>
-<script type="text/javascript" src="../static/javascript/cart.js"></script>
 </body>
+<script type="text/javascript" src="../static/javascript/cart.js"></script>
 </html>

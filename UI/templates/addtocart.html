@@ -6,6 +6,7 @@
     <title>Add To Cart</title>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
     <link rel="shortcut icon" type="image/png" href="../static/img/favicon/shopping cart.png"/>
+    
 </head>
 
 <body>
@@ -16,9 +17,6 @@
             </div>
             <nav>
                 <ul>
-                    <li>
-                        <a href="attedantpage.html">Products</a>
-                    </li>
                     <li class="current">
                         <a href="addtocart.html">Add To Buyers Cart</a>
                     </li>
@@ -36,13 +34,12 @@
     <div class="product">
         <div class="product_body">
             <h3>Customers</h3>
-            <ul id="category">
-                <li class="current"><a href="#"><input type="checkbox" >Mary Kim</a></li>
-                <li><a href="#"><input type="checkbox" > Joseph Kiprono</a></li>
-                <li><a href="#"><input type="checkbox" > Georgey Gigz</a></li>
-                <li><a href="#"><input type="checkbox" > Lucy Wigwa</a></li>
-            </ul>
+            <input type="text" placeholder="Enter customer name" id="customer_name">
         </div>
+        <div id="total">
+            <strong>Current user:</strong> 
+             <div class="total" id="current_user"></div> 
+     </div>
         <div class="product_body1">
             <section class="food_items">
                 <div class="single_item">
@@ -54,83 +51,7 @@
                         <form>
                             <input type="text" placeholder="Serch item">
                         </form>
-                        <ul id="single_product">
-                            <li>
-                                <img src="../static/img/orange.jpg" style="width:100px; height:60px">
-                                <h5>Orange</h5>
-                                <p>
-                                    <strong>Price:</strong> Ksh80 Per kg</p>
-                                <p>
-                                    <strong>Stock amount:</strong> 103kg</p>
-                                <form>
-                                        <input type="text" placeholder="Enter Amount" required>
-                                        <button onclick="add_cart()">ADD TO CART</button>
-                                </form>
-
-                            </li>
-                            <li>
-                                <img src="../static/img/banana.jpg" style="width:100px; height:60px">
-                                <h5>Banana</h5>
-                                <p>
-                                    <strong>Price:</strong> Ksh150</p>
-                                <p>
-                                    <strong>Stock amount:</strong> 200kg</p>
-                                <form>
-                                        <input type="text" placeholder="Enter Amount" required>
-                                        <button onclick="add_cart()">ADD TO CART</button>
-                                </form>
-                            </li>
-                            <li>
-                                <img src="../static/img/apple.jpg" style="width:100px; height:60px">
-                                <h5>apple</h5>
-                                <p>
-                                    <strong>Price:</strong> Ksh 120 perKg</p>
-                                <p>
-                                    <strong>Stock amount:</strong> 103kg</p>
-                                <form>
-                                        <input type="text" placeholder="Enter Amount" required>
-                                        <button onclick="add_cart()">ADD TO CART</button>
-                                </form>
-
-                            </li>
-
-                            <li>
-                                <img src="../static/img/melon.jpg" style="width:100px; height:60px">
-                                <h5>Melon</h5>
-                                <p>
-                                    <strong>Price:</strong> Ksh100 per Piece</p>
-                                <p>
-                                    <strong>Stock amount:</strong> 500 Pieces</p>
-                                <form>
-                                        <input type="text" placeholder="Enter Amount" required>
-                                        <button onclick="add_cart()">ADD TO CART</button>
-                                </form>
-                            </li>
-                            <li>
-                                <img src="../static/img/strwabelly.jpg" style="width:100px; height:60px">
-                                <h5>Strawbelly</h5>
-                                <p>
-                                    <strong>Price:</strong> Ksh50 per Kg</p>
-                                <p>
-                                    <strong>Stock amount:</strong> 103kg</p>
-                                <form>
-                                        <input type="text" placeholder="Enter Amount" required>
-                                        <button onclick="add_cart()">ADD TO CART</button>
-                                </form>
-                            </li>
-                            <li>
-                                <img src="../static/img/pipeaple.jpg" style="width:100px; height:60px">
-                                <h5>Strawbelly</h5>
-                                <p>
-                                    <strong>Price:</strong> Ksh100 per piece</p>
-                                <p>
-                                    <strong>Stock amount:</strong> 203 pieces</p>
-                                <form>
-                                        <input type="text" placeholder="Enter Amount" required>
-                                        <button onclick="add_cart()">ADD TO CART</button>
-                                </form>
-                            </li>
-                        </ul>
+                        <div id="all_products"></div>
 
                     </article>
                 </div>
@@ -138,11 +59,10 @@
 
         </div>
     </div>
-
     <footer>
         <p>Gigz's Solutions Store manager, Copyright &copy; 2018</p>
     </footer>
-    <script type="text/javascript" src="../static/javascript/cart.js"></script>
+    
 </body>
-
+<script type="text/javascript" src="../static/javascript/sales.js"></script>
 </html>
