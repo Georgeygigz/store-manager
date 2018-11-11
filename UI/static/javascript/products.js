@@ -3,10 +3,10 @@
 function addProduct() {
     const token = localStorage.getItem("token");
     const products_url = "http://127.0.0.1:5000/api/v2/products";
-    var select_box=document.getElementById("category");
+    var select_box= document.getElementById("category");
     let data = {
         product_name: (document.getElementById("item_name").value).toLowerCase(),
-        category_id:  select_box.selectedIndex,
+        category_id:  parseInt( select_box.selectedIndex)+1,
         stock_amount: parseInt(document.getElementById("quantity").value),
         price:parseInt(document.getElementById("item_price").value)
     }
