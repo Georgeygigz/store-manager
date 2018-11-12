@@ -124,7 +124,11 @@ function displayUser(){
 }
 })  .catch(error => console.log(error));
 }
- document.write(displayUser());
+ //document.write(displayUser());
+ if (window.attachEvent) {window.attachEvent('onload', displayUser);}
+else if (window.addEventListener) {window.addEventListener('load', displayUser, false);}
+else {document.addEventListener('load', displayUser, false);}
+
 
  
 /**Delete user account**/

@@ -54,7 +54,8 @@ function allProducts(){
          <h3>${result[i].product_name}</h3>
          <p><b>Price:</b> ${result[i].price}</p>
          <p><b>Stock Amount:</b>${result[i].stock_amount}</p>
-        <button onclick=(newSaleRecord(${result[i].product_id}))>ADD TO CART</button>
+        <button onclick=(newSaleRecord(${result[i].product_id})) style="border: 1px solid #6b6a69;
+        border-radius: 4px; padding:5px; background:#f88934">ADD TO CART</button>
          </li>`
  }
  product+=`</ul>`
@@ -63,7 +64,9 @@ function allProducts(){
  
 })  .catch(error => console.log(error));
 }
-document.write(allProducts());
+if (window.attachEvent) {window.attachEvent('onload', allProducts);}
+else if (window.addEventListener) {window.addEventListener('load', allProducts, false);}
+else {document.addEventListener('load', allProducts, false);}
 
 
 /**Display sales records for specific user**/
@@ -98,4 +101,7 @@ function displaySales(username){
 }
 })  .catch(error => console.log(error));
 }
-document.write(displaySales(user));
+//document.write(displaySales(user));
+if (window.attachEvent) {window.attachEvent('onload', displaySales(user));}
+else if (window.addEventListener) {window.addEventListener('load',  displaySales(user), false);}
+else {document.addEventListener('load',  displaySales(user), false);}

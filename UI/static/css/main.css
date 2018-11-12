@@ -1,8 +1,9 @@
+
 .products{
   width : 80%;
-  margin: auto;
   overflow: hidden;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
 }
 .items{
     width : 97%;
@@ -20,6 +21,11 @@
     border-radius: 40px;
     height: 400px;
     
+}
+#main_page{
+    margin: 0 auto;
+    padding-top: 64px;
+    width: 94%;
 }
 .section{
     float: left;
@@ -73,6 +79,7 @@ header nav{
     overflow: hidden;
     float: left;
     margin: 5px;
+
 
 }
 .product_body {
@@ -246,9 +253,24 @@ table.sales_records th {
 
 footer{
     padding: 5px;
-    margin-top: 760px;
     color: #ffffff;
     background-color: #f88934;
     text-align: center; 
+
+}
+/*Media Queries*/
+@media(max-width: 1000px){
+	header .products,
+		header nav,
+		header nav li{
+		 float: none;
+		 text-align: center;
+		 width: 100%;
+	}
+	header{
+        padding-bottom: 20px;
+        max-height: 100px;
+    
+	}
 
 }
