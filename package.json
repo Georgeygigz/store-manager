@@ -1,0 +1,23 @@
+{
+  "name": "storemanager",
+  "version": "1.0.0",
+  "description": "Store manager app",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Georgeygigz/store-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Georgeygigz/store-manager/issues"
+  },
+  "homepage": "https://github.com/Georgeygigz/store-manager#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
