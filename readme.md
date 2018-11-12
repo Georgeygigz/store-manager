@@ -41,4 +41,4 @@ _5. `cd` to `UI folder` use the following credentials to login as admin_
 
 
 # Where to get the Demo
-Navigate to this [link]() to view the pages
+Navigate to this [link](https://georgeygigz.github.io/store-manager/UI/templates/) to view the pages
