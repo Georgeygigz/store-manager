@@ -68,8 +68,10 @@ function getProductsCategories(){
 })  .catch(error => console.log(error));
 
 }
-document.write(getProductsCategories());
-
+//document.write(getProductsCategories());
+if (window.attachEvent) {window.attachEvent('onload', getProductsCategories);}
+else if (window.addEventListener) {window.addEventListener('load', getProductsCategories, false);}
+else {document.addEventListener('load', getProductsCategories, false);}
 
 /**Delete product category**/
 function deleteProductCategory(category_id){

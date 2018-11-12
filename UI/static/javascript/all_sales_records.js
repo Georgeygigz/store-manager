@@ -32,4 +32,6 @@ function displaySales(){
 }
 })  .catch(error => console.log(error));
 }
-document.write(displaySales());
+if (window.attachEvent) {window.attachEvent('onload', displaySales);}
+else if (window.addEventListener) {window.addEventListener('load', displaySales, false);}
+else {document.addEventListener('load', displaySales, false);}

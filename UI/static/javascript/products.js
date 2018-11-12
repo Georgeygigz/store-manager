@@ -52,6 +52,7 @@ function getProducts(){
       }).then(function(data){
           let result=data.message
     if (result==="No Available products"){
+        document.getElementById('view_products').innerHTML="No available products";
 
     }else{
 
@@ -78,7 +79,10 @@ function getProducts(){
 })  .catch(error => console.log(error));
 
 }
- document.write(getProducts());
+ //document.write(getProducts());
+ if (window.attachEvent) {window.attachEvent('onload', getProducts);}
+else if (window.addEventListener) {window.addEventListener('load', getProducts, false);}
+else {document.addEventListener('load', getProducts, false);}
 
 /**Display all available products**/
 function allProducts(){
@@ -95,6 +99,7 @@ function allProducts(){
       }).then(function(data){
           let result=data.message
           if (result==="No Available products"){
+            document.getElementById('all_products').innerHTML="No available products";
 
         }else{
      product=`<ul id="single_product">`
@@ -114,7 +119,10 @@ function allProducts(){
  
 })  .catch(error => console.log(error));
 }
-document.write(allProducts());
+//document.write(allProducts());
+if (window.attachEvent) {window.attachEvent('onload', allProducts);}
+else if (window.addEventListener) {window.addEventListener('load', allProducts, false);}
+else {document.addEventListener('load', allProducts, false);}
 
 /**Populate categories to select box**/
 function productCategories(){
@@ -143,7 +151,10 @@ function productCategories(){
 })  .catch(error => console.log(error));
 
 }
-document.write(productCategories());
+//document.write(productCategories());
+if (window.attachEvent) {window.attachEvent('onload', productCategories);}
+else if (window.addEventListener) {window.addEventListener('load', productCategories, false);}
+else {document.addEventListener('load', productCategories, false);}
 
 /**Delete product**/
 function deleteProduct(product_id){

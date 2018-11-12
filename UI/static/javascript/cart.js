@@ -73,7 +73,10 @@ function displayCart(){
 }
 })  .catch(error => console.log(error));
 }
-document.write(displayCart());
+//document.write(displayCart());
+if (window.attachEvent) {window.attachEvent('onload', displayCart);}
+else if (window.addEventListener) {window.addEventListener('load', displayCart, false);}
+else {document.addEventListener('load', displayCart, false);}
 
 /**Delete items from cart**/
 function deleteSale(sale_id){
