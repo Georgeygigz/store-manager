@@ -105,3 +105,22 @@ function displaySales(username){
 if (window.attachEvent) {window.attachEvent('onload', displaySales(user));}
 else if (window.addEventListener) {window.addEventListener('load',  displaySales(user), false);}
 else {document.addEventListener('load',  displaySales(user), false);}
+
+
+/**Search product**/
+function searchProduct() {
+    var input, filter, h3;
+    input = document.getElementById('search');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("single_product");
+    li = ul.getElementsByTagName('li');
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("h3")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
