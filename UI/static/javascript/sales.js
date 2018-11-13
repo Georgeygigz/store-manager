@@ -23,6 +23,7 @@ fetch(product_url, {
 
 function newSaleRecord(id){
     localStorage.setItem("item_name",c_product[id-1].product_name);
+    localStorage.setItem("price",c_product[id-1].price);
     window.location.href = '../templates/cart.html';
     
 }
@@ -50,7 +51,7 @@ function allProducts(){
      for (i=0; i<result.length; i++){
          product +=`
          <li id="list">
-         <img src="../static/img/img.png" style="width:70px; height:70px">
+         <img src="../static/img/${result[i].image}" style="width:100px; height:100px">
          <h3>${result[i].product_name}</h3>
          <p><b>Price:</b> ${result[i].price}</p>
          <p><b>Stock Amount:</b>${result[i].stock_amount}</p>
@@ -84,13 +85,17 @@ function displaySales(username){
       }).then(function(data){
           let result=data.message
           if (result==="Sale Not Found"){
-
+            document.getElementById("sales_records").innerHTML=0;
+            document.getElementById("products_sold").innerHTML=0;
           }else{
+            document.getElementById("sales_records").innerHTML=result.length;
             cartdata='<table class="sales_records"  style="margin:5px; padding:5px; width:100%;float:left;">'+
             '<tr><th>Customer Name</th><th>Product Name</th><th>Quantity</th><th>Total Price</th>'+
             '<th>Date Sold</th></tr>';
+            all_products=0
             total=0;
             for (i=0; i<result.length; i++){
+            all_products+=result[i].quantity
             total+=result[i].product_price*result[i].quantity
             cartdata+="<tr><td>"+result[i].customer_name+"</td><td>"+
             result[i].product_name+"</td><td>"+result[i].quantity+"</td><td>"+
@@ -98,6 +103,7 @@ function displaySales(username){
          }
          cartdata +='<tr></tr></table>';
          document.getElementById('view_sale').innerHTML=cartdata;
+         document.getElementById("products_sold").innerHTML=all_products;
 }
 })  .catch(error => console.log(error));
 }

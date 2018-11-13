@@ -109,4 +109,3 @@ function deleteSale(sale_id){
     .catch(error => console.log(error));
     }else{}
 }
-

@@ -113,3 +113,10 @@ footer{
     background-color: #f88934;
     text-align: center; 
 }
+/*Media Queries*/
+@media(max-width: 700px){
+    .login{
+        width: 100%;
+    }
+    
+}

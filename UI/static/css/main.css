@@ -80,7 +80,6 @@ header nav{
     float: left;
     margin: 5px;
 
-
 }
 .product_body {
     float: left;
@@ -114,7 +113,7 @@ header nav{
 }
 
 .product_body1 {
-    width: 70%;
+    width: 68%;
     float: right;
     overflow: hidden;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -270,7 +269,43 @@ footer{
 	header{
         padding-bottom: 20px;
         max-height: 100px;
+    }
+    .single_item{
+        
+        width: 100%;
+        overflow: hidden;
+        margin: auto;
+    }
+    .single_item li{
+       float: right;
+       width: 22%;
+    }
+    .product_body1 {
+        width: 100%;
+    }
+    .product_body {
+        width: 80%;
+        padding: 5px;
+        float: right;      
+    }
+    .form, #item_desc form input  {
+        border: 1px solid #ffffff;
+        width: 90%;
+    }
     
-	}
+}
+@media(max-width: 650px){
+    .single_item{
+        width: 90%;
+        overflow: hidden;
+        margin: auto;
+    }
+    .single_item li{
+       float: right;
+       width: 40%;
+    }
+    ul#product_body1  table,th, td,{
+        padding: 2px;
 
+    }
 }
