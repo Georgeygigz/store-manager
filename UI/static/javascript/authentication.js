@@ -26,9 +26,15 @@ function login() {
             document.getElementById("message").innerHTML = message + " Welcome " + user;
             document.getElementById("message").style.color = "green";
             if (role === "admin") {
-                setTimeout(() => { window.location.href = '../templates/products.html'; }, 1500);
+                setTimeout(() => {
+
+                     window.location.href = '../templates/products.html'; 
+                    }, 1500);
             } else {
-                setTimeout(() => { window.location.href = '../templates/addtocart.html'; }, 1500);
+                setTimeout(() => {
+
+                    window.location.href = '../templates/addtocart.html';
+                 }, 1500);
             }
         }
         else {
@@ -57,7 +63,8 @@ function signup() {
     if (password !==cpassword){
         document.getElementById("message").innerHTML = "Password doesnt match";
         document.getElementById("message").style.color = "red";
-        setTimeout(() => { document.getElementById("message").innerHTML = ""; }, 6000);
+        setTimeout(() => {
+             document.getElementById("message").innerHTML = ""; }, 6000);
     }else{
 
  /**Save new user details**/  
@@ -75,16 +82,19 @@ function signup() {
             if (message === "Account created successfuly") {
                 document.getElementById("message").innerHTML = message;
                 document.getElementById("message").style.color = "green";
-                setTimeout(() => { window.location.href = '../templates/signup.html'; }, 1500);
+                setTimeout(() => {
+                     window.location.href = '../templates/signup.html'; }, 1500);
             }
             else if (message === "invalid password") {
                 document.getElementById("message").innerHTML = message +" sample password(GH@$_kf12)";
                 document.getElementById("message").style.color = "red";
-                setTimeout(() => { document.getElementById("message").innerHTML = ""; }, 9000);
+                setTimeout(() => {
+                     document.getElementById("message").innerHTML = ""; }, 9000);
             }else{
                 document.getElementById("message").innerHTML = message;
                 document.getElementById("message").style.color = "red";
-                setTimeout(() => { document.getElementById("message").innerHTML = ""; }, 6000);
+                setTimeout(() => {
+                     document.getElementById("message").innerHTML = ""; }, 6000);
             }
         })
             /**Handle errors**/
@@ -152,7 +162,8 @@ function deleteUserAccount(user_id){
       if (result === "User Deleted Successfuly"){
         document.getElementById("message").innerHTML = result;
         document.getElementById("message").style.color = "green";
-        setTimeout(() => {window.location.href = '../templates/signup.html';},3000);
+        setTimeout(() => {
+            window.location.href = '../templates/signup.html';},3000);
       }
       else{
         document.getElementById("message").innerHTML = result;
@@ -190,7 +201,8 @@ function updateUserRole(user_id){
       if (result === "Updated Successfuly"){
         document.getElementById("message").innerHTML = result;
         document.getElementById("message").style.color = "green";
-        setTimeout(() => {window.location.href = '../templates/signup.html';},3000);
+        setTimeout(() => {
+            window.location.href = '../templates/signup.html';},3000);
       }
       else{
         document.getElementById("message").innerHTML = result;
