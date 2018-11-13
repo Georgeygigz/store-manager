@@ -27,12 +27,9 @@ function login() {
             document.getElementById("message").style.color = "green";
             if (role === "admin") {
                 setTimeout(() => {
-
-                     window.location.href = '../templates/products.html'; 
-                    }, 1500);
+                     window.location.href = '../templates/products.html';}, 1500);
             } else {
                 setTimeout(() => {
-
                     window.location.href = '../templates/addtocart.html';
                  }, 1500);
             }
@@ -64,7 +61,7 @@ function signup() {
         document.getElementById("message").innerHTML = "Password doesnt match";
         document.getElementById("message").style.color = "red";
         setTimeout(() => {
-             document.getElementById("message").innerHTML = ""; }, 6000);
+             document.getElementById("message").innerHTML = "";}, 6000);
     }else{
 
  /**Save new user details**/  
@@ -89,12 +86,12 @@ function signup() {
                 document.getElementById("message").innerHTML = message +" sample password(GH@$_kf12)";
                 document.getElementById("message").style.color = "red";
                 setTimeout(() => {
-                     document.getElementById("message").innerHTML = ""; }, 9000);
+                     document.getElementById("message").innerHTML = "";}, 9000);
             }else{
                 document.getElementById("message").innerHTML = message;
                 document.getElementById("message").style.color = "red";
                 setTimeout(() => {
-                     document.getElementById("message").innerHTML = ""; }, 6000);
+                     document.getElementById("message").innerHTML = "";}, 6000);
             }
         })
             /**Handle errors**/
