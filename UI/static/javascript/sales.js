@@ -115,18 +115,17 @@ else {document.addEventListener('load',  displaySales(user), false);}
 
 /**Search product**/
 function searchProduct() {
-    var input, filter, h3;
-    input = document.getElementById('search');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("single_product");
-    li = ul.getElementsByTagName('li');
+    var input = document.getElementById('search');
+    var search = input.value.toUpperCase();
+    var ul = document.getElementById("single_product");
+    var list = ul.getElementsByTagName('li');
 
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("h3")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+    for (i = 0; i < list.length; i++) {
+        a = list[i].getElementsByTagName("h3")[0];
+        if (a.innerHTML.toUpperCase().indexOf(search) > -1) {
+            list[i].style.display = "";
         } else {
-            li[i].style.display = "none";
+            list[i].style.display = "none";
         }
     }
 }

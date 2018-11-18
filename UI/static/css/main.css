@@ -248,7 +248,12 @@ table.sales_records th {
     color: white;
     background-color: rgb(184, 179, 179);
 }
-
+#footer{
+    margin:20px;
+    text-align: center;
+    color: teal;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 footer{
     padding: 5px;
