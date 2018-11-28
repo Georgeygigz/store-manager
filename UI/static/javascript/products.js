@@ -11,6 +11,15 @@ function addProduct() {
         price:parseInt(document.getElementById("item_price").value),
         image:document.getElementById("product_image").value.replace(/^.*[\\\/]/, '')
     }
+    if(data.product_name===""){
+        alert("empty")
+    }
+    required_fields=[data.product_name,data.category_id, data.stock_amount, data.price,data.image]
+    for (var i in required_fields) {
+        if(i===""){
+            alert("empty")
+        }
+      }
  /**Save new product details**/  
         fetch( products_url, {
             method: "POST",
