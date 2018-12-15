@@ -11,6 +11,18 @@ function addProduct() {
         price:parseInt(document.getElementById("item_price").value),
         image:document.getElementById("product_image").value.replace(/^.*[\\\/]/, '')
     }
+    
+    /**Validate for empty inputs**/
+    var new_product=[data.product_name,data.category_id,data.stock_amount,data.price,data.image];
+    var product_length=new_product.length;
+    for (var i=0; i<product_length;i++){
+        if (new_product[i]===""){
+            document.getElementById("message").style.color = "red";
+            document.getElementById("message").innerHTML = "All fields are required";
+            return false;
+        }
+    }
+
     if(data.product_name===""){
         alert("empty")
     }

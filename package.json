@@ -1,10 +1,20 @@
 {
-  "name": "storemanager",
+  "name": "store-manager",
   "version": "1.0.0",
-  "description": "Store manager app",
-  "main": "app.js",
+  "description": "This is a Store Manager Web Application",
+  "main": "index.js",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "jest": "^23.6.0",
+    "puppeteer": "^1.11.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0"
+  },
   "scripts": {
-    "test": "mocha --timeout 10000"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,13 +25,5 @@
   "bugs": {
     "url": "https://github.com/Georgeygigz/store-manager/issues"
   },
-  "homepage": "https://github.com/Georgeygigz/store-manager#readme",
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "express": "^4.16.4",
-    "mocha": "^5.2.0",
-    "request": "^2.88.0",
-    "should": "^13.2.3",
-    "supertest": "^3.3.0"
-  }
+  "homepage": "https://github.com/Georgeygigz/store-manager#readme"
 }

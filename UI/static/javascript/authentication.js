@@ -5,6 +5,14 @@ function login() {
         password: document.getElementById("password").value
     };
     const login_url = "https://storemanagerv2.herokuapp.com/api/v2/auth/login";
+    var credentials=[data.email, data.password];
+    var credential_length=credentials.length;
+    for (var i=0; i<credential_length;i++){
+        if (credentials[i]===""){
+            alert("all fields are required");
+            break;
+        }
+    }
 
 /**Post login credentials**/
     fetch(login_url, {
@@ -53,6 +61,15 @@ function signup() {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
         role:document.getElementById("role").value
+    }
+    var signup_details=[data.username,data.email,data.password,data.role];
+    var signupdetails_length=signup_details.length;
+    for (var i=0; i<signupdetails_length;i++){
+        if (signup_details[i]===""){
+            document.getElementById("message").innerHTML ="All fields are required";
+            document.getElementById("message").style.color="red";
+            return false;
+        }
     }
 /**Check whether password match**/
     password=data.password
@@ -208,4 +225,9 @@ function updateUserRole(user_id){
     })
     .catch(error => console.log(error));
 }
+}
+function logout(){
+    //localStorage.clear()
+    alert('')
+   window.location.href = '../templates/index.html';
 }

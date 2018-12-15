@@ -13,6 +13,18 @@ function addTocart() {
         customer_name: document.getElementById("customer_name").value,
         quantity: parseInt(document.getElementById("quantity").value),
     }
+       
+    /**Validate for empty inputs**/
+    var new_sale_record=[data.product_name,data.customer_name,data.quantity];
+    var sale_record_length=new_sale_record.length;
+    for (var i=0; i<sale_record_length;i++){
+        if (new_sale_record[i]===""){
+            document.getElementById("message").style.color = "red";
+            document.getElementById("message").innerHTML = "All fields are required";
+            return false;
+        }
+    }
+
         fetch( sale_url, {
             method: "POST",
             body: JSON.stringify(data),

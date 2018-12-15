@@ -5,7 +5,17 @@ function addCategory() {
     let data = {
         category_name: (document.getElementById("category").value).toLowerCase(),
     }
-
+      
+    /**Validate for empty inputs**/
+    var new_category=[data.category_name];
+    var category_length=new_category.length;
+    for (var i=0; i<category_length;i++){
+        if (new_category[i]===""){
+            document.getElementById("message").style.color = "red";
+            document.getElementById("message").innerHTML = "All fields are required";
+            return false;
+        }
+    }
  /**Save new product category details**/  
         fetch( products_url, {
             method: "POST",
