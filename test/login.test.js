@@ -5,7 +5,7 @@ import puppeteer from "puppeteer"
 const login_page="http://127.0.0.1:5500/UI/templates/index.html"
 
 //create fake login credentials
-const lead={
+const loginDetails={
     email:faker.internet.email(),
     password:faker.internet.password(),
 }
@@ -38,8 +38,8 @@ let password="#password"
     it("test login with wrong credentials", async () => {
     await page.goto(login_page);
     await page.waitForSelector("form")
-    await page.type(email, lead.email);
-    await page.type(password, lead.password);
+    await page.type(email, loginDetails.email);
+    await page.type(password, loginDetails.password);
     await page.click("button[type=submit]");
 
     }, 60000);
