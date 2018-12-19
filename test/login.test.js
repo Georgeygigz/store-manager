@@ -42,5 +42,5 @@ let password="#password"
     await page.type(password, loginDetails.password);
     await page.click("button[type=submit]");
 
-    }, 60000);
+    }, 90000);
 });

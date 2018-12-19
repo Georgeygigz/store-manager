@@ -2,16 +2,11 @@ import faker from "faker"
 import puppeteer from "puppeteer"
 
 //configuration of the url
-const productsPage="http://127.0.0.1:5500/UI/templates/addproducts.html"
+const categoryPage="http://127.0.0.1:5500/UI/templates/category.html"
 
 //create fake login credentials
-const productDetails={
-    item_name:faker.lorem.word(),
-    item_price:"10",
-    quantity:faker.random.number(),
-    image:faker.image.imageUrl()
-
-
+const categoryDetail={
+    category:faker.lorem.word()
 }
 
 //variable for puppeteer
@@ -20,10 +15,8 @@ let browser;
 const width = 1920;
 const height = 1080;
 
-let item_name="#item_name";
-let item_price="#item_price";
-let quantity="#quantity";
-let image="#image";
+let category="#category";
+
 
 //definatio of puppeteer behavior
 
@@ -42,13 +35,10 @@ let image="#image";
 
  describe("login page", () => {
     //Actual test
-    it("test add new product", async () => {
-    await page.goto(productsPage);
+    it("test add new category", async () => {
+    await page.goto(categoryPage);
     await page.waitForSelector("form")
-    await page.type(item_name, productDetails.item_name);
-    await page.type(item_price, productDetails.item_price);
-    await page.type(quantity, productDetails.quantity);
-    await page.type(image, productDetails.image);
+    await page.type(category, categoryDetail.category);
     await page.click("button[type=submit]");
 
     }, 600000);
